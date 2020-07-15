@@ -72,8 +72,9 @@ public class CmsParserUtil extends ParserUtil {
 	 * @throws ParseException
 	 * @throws IOException
 	 */
-	public static void generateList(CategoryEntity column, int articleIdTotal)
+	public static void generateList(CategoryEntity column, List<ContentBean> articles)
 			throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException {
+		int articleIdTotal = articles.size();
 		// 只初始化一次cfg
 		if (ftl == null) {
 			ftl = new FileTemplateLoader(new File(ParserUtil.buildTempletPath()));
@@ -133,6 +134,9 @@ public class CmsParserUtil extends ParserUtil {
 					// 设置分页的起始位置
 					page.setPageNo(pageNo);
 					parserParams.put(ParserUtil.PAGE, page);
+					if(articleIdTotal>0){
+						parserParams.put("id", articles.get(0).getArticleId());
+					}
 					TagParser tag = new TagParser(content,parserParams);
 					FileUtil.writeString(tag.rendering(), columnListPath, Const.UTF8);
 					// 判断是手机端生成还是pc端,防止重复生成

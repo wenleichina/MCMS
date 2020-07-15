@@ -10,9 +10,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
  
 @SpringBootApplication
-@ComponentScan(basePackages = {"net.mingsoft"})
-@MapperScan(basePackages={"**.dao"})
-@ServletComponentScan(basePackages = {"net.mingsoft"})
+@ComponentScan(basePackages = {"net.mingsoft","com.funzuqiu"})
+@MapperScan(basePackages={"**.dao"," com.funzuqiu.ffu.home.modules.ffu.mapper"})
+@ServletComponentScan(basePackages = {"net.mingsoft","com.funzuqiu"})
 public class MSApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MSApplication.class, args);

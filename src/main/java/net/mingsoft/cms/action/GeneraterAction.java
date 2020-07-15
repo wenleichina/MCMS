@@ -170,7 +170,7 @@ public class GeneraterAction extends BaseAction {
 				switch (column.getCategoryType()) {
 					//TODO 暂时先用字符串代替
 				case "1": // 列表
-					CmsParserUtil.generateList(column, articleIdList.size());
+					CmsParserUtil.generateList(column, articleIdList);
 					break;
 				case "2":// 单页
 					if(articleIdList.size()==0){

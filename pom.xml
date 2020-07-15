@@ -56,12 +56,135 @@
 			<artifactId>ms-mpeople</artifactId>
 			<version>1.0.18</version>
 		</dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.mingsoft</groupId>-->
+            <!--<artifactId>ms-mdiy</artifactId>-->
+            <!--<version>1.0.20</version>-->
+        <!--</dependency>-->
+		<!-- ms-mcms 内容模块插件 -->
+		<dependency>
+			<groupId>net.mingsoft</groupId>
+			<artifactId>ms-mcms</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+		<!-- ms-mcms 内容模块源码 -->
+		<dependency>
+			<groupId>net.mingsoft</groupId>
+			<artifactId>ms-mcms</artifactId>
+			<version>5.0.0</version>
+			<classifier>sources</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.funzuqiu</groupId>
+			<artifactId>commons</artifactId>
+			<version>1.0.0.RELEASE</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/commons-1.0.0.RELEASE.jar</systemPath>
+		</dependency>
 		<!-- 此部分是铭飞平台MStroe的客户端（MStore不在铭飞开源产品范围），如果不需要使用MStore可以删除掉 -->
-		<!--<dependency>-->
-			<!--<groupId>net.mingsoft</groupId>-->
-			<!--<artifactId>ms-upgrader</artifactId>-->
-			<!--<version>1.0.17</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>net.mingsoft</groupId>
+			<artifactId>ms-upgrader</artifactId>
+			<version>1.0.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j-to-slf4j</artifactId>
+					<groupId>org.apache.logging.log4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-boot-starter-logging</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>5.1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.1-jre</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- aliyun sms -->
+		<dependency>
+			<groupId>com.aliyun</groupId>
+			<artifactId>aliyun-java-sdk-core</artifactId>
+			<version>4.5.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>ms-mcms</finalName>

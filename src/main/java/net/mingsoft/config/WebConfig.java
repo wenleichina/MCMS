@@ -1,9 +1,12 @@
 package net.mingsoft.config;
 
 import java.io.File;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.ibatis.mapping.DatabaseIdProvider;
+import org.apache.ibatis.mapping.VendorDatabaseIdProvider;
 import org.springframework.aop.Advisor;
 import net.mingsoft.basic.filter.XSSEscapeFilter;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
@@ -33,6 +36,21 @@ import net.mingsoft.basic.util.BasicUtil;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+
+	@Bean
+	public DatabaseIdProvider databaseIdProvider() {
+		DatabaseIdProvider databaseIdProvider = new VendorDatabaseIdProvider();
+		Properties p = new Properties();
+		p.setProperty("Oracle", "oracle");
+		p.setProperty("MySQL", "mysql");
+		p.setProperty("PostgreSQL", "postgresql");
+		p.setProperty("DB2", "db2");
+		p.setProperty("SQL Server", "sqlserver");
+		databaseIdProvider.setProperties(p);
+		return databaseIdProvider;
+	}
+
 
 	/**
 	 * 上传路径
