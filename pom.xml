@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>net.mingsoft</groupId>
 			<artifactId>ms-mcms</artifactId>
-			<version>5.0.0</version>
+			<version>5.2.6</version>
 		</dependency>
 		<!-- ms-mcms 内容模块源码 -->
 		<dependency>
